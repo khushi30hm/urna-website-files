@@ -1,0 +1,300 @@
+canvas {
+    width: 90%;
+    height: 100vh;
+
+  }
+
+  @media only screen and (max-width: 600px) {
+
+    canvas {
+      width: 100%;
+      height: 65vh;
+
+    }
+
+    
+}
+.c-circle li{
+  color: #fff;
+}
+.c-circle li b{
+  color: #d15fbe;
+}
+.waves>use {
+    animation: move-forever 2s -2s linear infinite;
+  }
+
+  .waves>use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 12s;
+  }
+
+  .waves>use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 6s;
+  }
+
+  @keyframes move-forever {
+    0% {
+      transform: translate(-90px, 0%);
+    }
+
+    100% {
+      transform: translate(85px, 0%);
+    }
+  }
+
+  
+ .banner svg {
+    z-index: 111;
+    margin-top: -168px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 10vw;
+    max-height: 200px;
+  }
+
+  .solution svg{
+    z-index: 111;
+    margin-top: -160px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 10vw;
+    max-height: 200px;
+  }
+  .solution .project1 svg{
+    z-index: 111;
+    margin-top: 37px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 10vw;
+    max-height: 200px;
+  }
+  .footer2 svg{
+    z-index: 111;
+    margin-top: -50px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 10vw;
+    max-height: 200px;
+  }
+  @media only screen and (max-width: 600px) {
+
+   
+    .side-leaf{
+      display: none;
+    }
+    .banner svg {
+    z-index: 111;
+    margin-top: -66px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 10vw;
+    max-height: 200px;
+  }
+  .solution svg{
+    z-index: 111;
+    margin-top: -60px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 10vw;
+    max-height: 200px;
+  }
+  .footer2 svg{
+    z-index: 111;
+    margin-top: -15px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 10vw;
+    max-height: 200px;
+  }
+  .solution .project1 svg{
+    z-index: 111;
+    margin-top: -12px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 10vw;
+    max-height: 200px;
+  }
+}
+.text-border{
+
+  border: solid 1px rgb(245 245 245);
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px;
+  box-shadow: 5px 5px 5px gray;
+  transition: all .2s ease-in-out
+}
+.text-border p{
+  color: white;
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+.text-border h3{
+  color: white;
+  font-weight: 100;
+  letter-spacing: 1px;
+  text-align: center;
+}
+.text-border:hover{
+  transform: scale(1.1);
+}
+.solution{
+  background-color: whitesmoke;
+}
+.eart-bottom{
+  margin-bottom: 15px;
+}
+.service-style-two .heading h2 {
+  color: white !important;
+}
+.service-style-two .heading span {
+  color: white !important;
+}
+.service-two-box h3 a{
+  color: white !important;
+}
+.service-two-box p{
+  color: white;
+  letter-spacing: 1px;
+}
+.construction-services .services-nav h2 {
+  color: white;
+}
+.construction-services .services-nav ul li{
+  color: white;
+}
+.construction-services .services-nav ul li button.nav-link.active{
+  color: white;
+}
+.construction-services .services-nav ul li button{
+  color: white;
+}
+.banner-style-one .breadcrums ul li p{
+  color: black;
+}
+.about-first h2{
+  color: white;
+}
+.about-first .who-we-are p{
+  color: white;
+}
+.about-style-one .about-data-right h2{
+  color: black;
+}
+.about-style-one .about-data-right .about-info p{
+  color: black;
+}
+.banner-style-one .breadcrums ul li p{
+  color: black;
+}
+.odometer.odometer-auto-theme li{
+ color: white;
+}
+.service-style-one .service-data p{
+  color: black;
+}
+.service-style-one .service-data .text-border1{
+  color: rgb(255, 255, 255);
+}
+.about-how-it-works .plans p{
+  color: black;
+}
+.counter-style-one .counter-data h4{
+  color: white;
+}
+.about-first .who-we-are ul li{
+  color: white;
+}
+.desktop-nav .nav-bar ul > li ul.sub-menu li a{
+  color: black;
+}
+.heading-style-2 .data h2{
+  color: white;
+}
+.heading-style-2 .data span{
+  color: white;
+}
+.team-style-one .team-data .team-info h3 {
+  color: white;
+}
+.team-style-one .team-data .team-info p {
+  color: white;
+}
+.client-review-style-one .head-review span{
+  color: white;
+}
+.client-review-style-one .head-review h3{
+  color: white;
+}
+.client-review-slider .slider-data p{
+  color: white;
+}
+.client-review-slider .slider-data .bio .details h3{
+ color: white;
+}
+.counttt{
+  color: white;
+}
+
+.project-style-one .project-post .project-data p{
+  color: black;
+}
+.heading.heading-style-3 h2{
+  color: white;
+}
+.loaction{
+  color: white !important;
+}
+.footer-style-one .footer-p-2 .footer-col ul li a {
+      width: 60%;
+    margin-top: -6px;
+    margin-left: 20px;
+    font-weight: 600;
+    color: white;
+}
+
+.detail-page h3 {
+  font-size: 50px;
+  color: #fbf9f9;
+  font-weight: bold;
+  font-family: 'Jost';
+}
+.team-style-two .team-data h3 a{
+  color: white;
+}
+.theme-btn{
+  background-color: white;
+}
+.counter-style-one .counter-data .count {
+  -webkit-text-stroke-color:white
+}
+.counter-style-one .counter-data .count i{
+  -webkit-text-fill-color:white
+}
+.contact-form-2 .data h4{
+  color: white;
+}
+.mobile-nav.desktop-menu h2 , .mobile-nav.desktop-menu h3 ,.mobile-nav.desktop-menu p ,.mobile-nav.desktop-menu .social-medias a{
+  color: white;
+}
+.d-flex-all img :hover{
+   width: 100px;
+}
+
+.gap1{
+  padding: 10px 0 !important;
+  position: relative;
+
+}
+
+
