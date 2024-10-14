@@ -99,7 +99,7 @@
 <style>
   .floating-form {
     position: fixed;
-    bottom: 120px;
+    bottom:60px;
     right: 20px;
     background-color: white;
     border: 1px solid #ccc;
@@ -495,17 +495,19 @@
 
           <div id="floating-form" class="floating-form">
             <span class="close-btn" id="close-btn">&times;</span> 
-            <form id="contact-form">
+            <form id="contact-form" method="post" action="./send.php">
                 <input type="text" id="name" name="name" placeholder="Name*" required>
                 <br>
                 <input type="tel" id="number" name="number" placeholder="Number*" required>
                 <br>
                 <input type="email" id="email" name="email" placeholder="Email">
                 <br>
+                <input type="text"  id="subject" name="subject"  placeholder="subject">
+                <br>
                 <textarea id="message" name="message" rows="6"  placeholder="Message"></textarea>
                 <br>
                 <div class="btn">
-                  <button type="submit">Submit</button>
+                  <button type="submit" name="send">Submit</button>
                 </div>
             </form>
         </div>
