@@ -1,50 +1,64 @@
-<?php
-
+<?php 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
 
-require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
+if(isset($_POST["send"])){
+    $name = htmlspecialchars(trim($_POST["name"]));
+    $number = htmlspecialchars(trim($_POST["number"]));
+    $email = filter_var(trim($_POST["email"]), FILTER_VALIDATE_EMAIL);
+    $subject = htmlspecialchars(trim($_POST["subject"]));
+    $message = htmlspecialchars(trim($_POST["message"]));
 
-if (isset($_POST["send"])) {
-    $mail = new PHPMailer(true);
+    if(!empty($name) && !empty($number) && !empty($message)) {
+        $mail = new PHPMailer(true);
 
-    try {
+        try {
+            $mail->isSMTP();
+            $mail->Host = 'smtp.gmail.com';
+            $mail->SMTPAuth = true;
+            $mail->Username = 'khushi.hospitalityminds@gmail.com'; 
+            $mail->Password = 'vqzfjvvwegwxnoty'; 
+            $mail->SMTPSecure = 'ssl';
+            $mail->Port = 465; 
 
-        $mail->SMTPDebug = 2; 
+            $mail->SMTPOptions = array(
+                'ssl' => array(
+                    'verify_peer' => false,
+                    'verify_peer_name' => false,
+                    'allow_self_signed' => true
+                )
+            );
 
-        $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com';
-        $mail->SMTPAuth = true;
-        $mail->Username = 'khushi.hospitalityminds@gmail.com';
-        $mail->Password = 'usgklqbsgmiydsaz';
-        $mail->SMTPSecure ='ssl';
-        $mail->Port = 465;
+            $mail->setFrom('khushi.hospitalityminds@gmail.com', $name);
+            $mail->addAddress('megha.hospitalityminds@gmail.com'); 
 
-        $mail->setFrom('khushi.hospitalityminds@gmail.com');
-        $mail->addAddress('megha.hospitalityminds@gmail.com');
-        $mail->isHTML(true);
-        $mail->Subject = $_POST["subject"];
-        $mail->Body = $_POST["name"] . "<br/>" . $_POST["number"] . "<br/>" . $_POST["email"] . "<br/>" . $_POST["message"];
-        $mail->send();
 
-        // echo 
-        // "<script>
-        // alert('sent successfully');
-        //  document.location.href = index.php;
-        // </script>";
+            $mail->isHTML(true);
+            $mail->Subject = $subject ?: 'New Contact Form Submission'; 
+            $mail->Body = "<strong>Message:</strong> $message<br/>
+                           <strong>Name:</strong> $name<br/>
+                           <strong>Phone Number:</strong> $number<br/>
+                           <strong>Email:</strong> $email";
 
+            $mail->send();
+            echo "<script>
+                    alert('Mail sent successfully');
+                    window.location.href = 'index.html';
+                  </script>";
+        } catch (Exception $e) {
+            echo "<script>
+                    alert('Mail could not be sent. Error: {$mail->ErrorInfo}');
+                  </script>";
+        }
+    } else {
         echo "<script>
-    alert('Email sent successfully!');
-    document.location.href = 'index.php';
-  </script>";
-    } catch (\PHPMailer\PHPMailer\Exception $e) {
-        // Error alert with detailed message
-        echo "<script>
-    alert('Message could not be sent. Mailer Error: {$mail->ErrorInfo}');
-  </script>";
+                alert('Please fill in all required fields.');
+              </script>";
     }
 }
+?>
